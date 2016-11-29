@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <title>Introduccion</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app>
+        <input type="text" placeholder="Escribe tu nombre" ng-model="nombre">
+        <input type="text" placeholder="Color" ng-model="color">
+        <hr>
+        <h1 class="text-{{color}}">Hola {{nombre}}!</h1>
+    </div>
+</body>
+
+</html>

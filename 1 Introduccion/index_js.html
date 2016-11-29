@@ -1,0 +1,24 @@
+
+<html>
+
+<head>
+    <title>Introduccion</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script>
+    	function mostrarNombre(){
+    		console.log('nombre', document.getElementById("nombre").value);
+    		document.getElementById("nombre2").innerHTML = document.getElementById("nombre").value;
+    	}
+    </script>
+</head>
+
+<body>
+    <div ng-app>
+        <label>Nombre: </label>
+        <input type="text" placeholder="Escribe tu nombre" id="nombre" onkeyup="mostrarNombre()">
+        <hr>
+        <h1>Hola <span id="nombre2"></span>!</h1>
+    </div>
+</body>
+
+</html>

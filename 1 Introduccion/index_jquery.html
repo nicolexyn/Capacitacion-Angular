@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Introduccion</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        console.log("ready!");
+
+        $("#nombre").keyup(function() {
+            console.log('nombre', $("#nombre").val());
+            $("#nombre2").html($("#nombre").val());
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <div ng-app>
+        <label>Nombre: </label>
+        <input type="text" placeholder="Escribe tu nombre" id="nombre">
+        <hr>
+        <h1>Hola <span id="nombre2"></span>!</h1>
+    </div>
+</body>
+
+</html>
