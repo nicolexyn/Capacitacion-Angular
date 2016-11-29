@@ -31,14 +31,14 @@ function saveProduct (req, res) {
   // console.log(req.body);
   // res.status(404).send({message: 'El producto no existe'});
   console.log('POST /api/product')
-  console.log(req.body)
+  console.log(req.body.product)
 
   let product = new Product()
-  product.name = req.body.name
-  product.image = req.body.image
-  product.price = req.body.price
-  product.category = req.body.category
-  product.description = req.body.description
+  product.name = req.body.product.name
+  product.image = req.body.product.image
+  product.price = req.body.product.price
+  product.category = req.body.product.category
+  product.description = req.body.product.description
 
   product.save((err, productStored) => {
     if (err) res.status(500).send({message: `Error al salvar en la base de datos ${err} `})
@@ -49,8 +49,9 @@ function saveProduct (req, res) {
 
 // ============================================== UPDATE =======================================================
 function updateProduct (req, res) {
+  console.log('req.body', req.body);
   let productId = req.params.productId
-  let update = req.body
+  let update = req.body.product
 
   Product.findByIdAndUpdate(productId, update, (err, productUpdated) => {
     if (err) res.status(500).send({ message: `Error al actualizar el producto: ${err}` })

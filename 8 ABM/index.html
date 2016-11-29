@@ -9,10 +9,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
     <script src="http://code.angularjs.org/1.3.14/angular-route.min.js"></script>
-    <script src="http://code.angularjs.org/1.3.14/i18n/angular-locale_es-es.js"></script>
+    <script src="http://code.angularjs.org/1.3.14/i18n/angular-locale_ar-es.js"></script>
     <script src="public/app.js"></script>
-    <script src="public/js/ListaProductosController.js"></script>
-    <script src="public/js/EditarProductoController.js"></script>
+    <script src="public/js/controllers/ListaProductosController.js"></script>
+    <script src="public/js/controllers/EditarProductoController.js"></script>
+    <script src="public/js/services/ProductosService.js"></script>
 </head>
 
 <body ng-app="miAp">
@@ -35,7 +36,6 @@
         <!-- /.navbar-collapse -->
     </nav>
     <div class="container">
-        <h1>prueb</h1>
         <div ng-view></div>
     </div>
 </body>

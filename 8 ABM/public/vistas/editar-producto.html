@@ -1,12 +1,33 @@
+<h2>Editar Producto</h2>
 <hr>
-<span>{{restantes()}} de {{tareas.length}}</span> [ <a class="text-danger" href="" ng-click="eliminar()">eliminar</a> ]
-<ul class="unstyled">
-    <li ng-repeat="tarea in tareas">
-        <input type="checkbox" ng-model="tarea.hecho">
-        <span class="hecho-{{tarea.hecho}}">{{tarea.texto}}</span>
-    </li>
-</ul>
-<form ng-submit="agregarTarea()">
-    <input type="texto" size="30" placeholder="Agregar una nueva tarea" ng-model="textoNuevaTarea">
-    <button class="btn btn-primary" type="submit">Agregar</button>
-</form>
+<div class="container">
+    <form ng-submit="guardar()">
+    	<div class="form-group" ng-class="{'has-error': forma.image.$invalid, 'has-success': forma.image.$valid}">
+            <label for="inputimage">Imagen</label>
+            <input id="inputimage" type="text" class="form-control" placeholder="Imagen" name="image" ng-model="producto.image" required>
+        </div>
+        <div class="form-group" ng-class="{'has-error': forma.name.$invalid, 'has-success': forma.name.$valid}">
+            <label for="inputname">Nombre</label>
+            <input id="inputname" type="text" class="form-control" placeholder="Nombre" name="name" ng-model="producto.name" required>
+        </div>
+        <div class="form-group" ng-class="{'has-error': forma.price.$invalid, 'has-success': forma.price.$valid}">
+            <label for="inputprice">Precio</label>
+            <input id="inputprice" type="text" class="form-control" placeholder="Precio" name="price" ng-model="producto.price" required>
+        </div>
+        <div class="form-group" ng-class="{'has-error': forma.category.$invalid, 'has-success': forma.category.$valid}">
+            <label for="inputcategory">Categoria</label>
+            <select id="inputcategory"  class="form-control"  name="category" ng-model="producto.category">
+                <option value="computers">Computadoras</option>
+                <option value="phones">Telefonos</option>
+                <option value="accesories">Accesorios</option>
+            </select>
+        </div>
+        <div class="form-group" ng-class="{'has-error': forma.description.$invalid, 'has-success': forma.description.$valid}">
+            <label for="inputdescription">Descripcion</label>
+            <textarea id="inputdescription" class="form-control" name="description" ng-model="producto.description" required></textarea>
+        </div>
+
+        <button class="btn btn-success" ng-disabled="forma.$invalid">Guardar</button>
+        <button class="btn btn-primary" ng-click="volver()">Volver</button>
+    </form>
+</div>

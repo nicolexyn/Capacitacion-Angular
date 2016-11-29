@@ -1,38 +1,37 @@
+<h2>Listado de Productos</h2>
 <hr>
-<div class="panel panel-primary">
+<button type="button" class="btn btn-primary" ng-click="agregarProducto()">Nuevo Producto</button>
+<div class="panel panel-primary" style="margin-top: 20px;">
     <div class="panel-heading">
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input type="text" class="form-control" placeholder="Buscare Empleado" ng-model="buscar.materno">
+            <input type="text" class="form-control" placeholder="Buscar producto" ng-model="buscar.materno">
         </div>
     </div>
     <div class="panel-body">
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>
-                        <a href="" ng-click="ordenarPor('nombre')">
-            Nombre/s
-          </a>
+                        <a href="" ng-click="ordenarPor('nombre')">Nombre</a>
                         <span class="caret" style="cursor: pointer" ng-click="ordenarPor('-nombre')"></span>
                     </th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Primer dia de trabajo</th>
-                    <th>Telefono</th>
-                    <th>Salario</th>
-                    <th>Bono</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="empleado in empleados | orderBy:ordenSeleccionado | filter:buscar">
-                    <td>{{empleado.nombre}}</td>
-                    <td>{{empleado.paterno | uppercase}}</td>
-                    <td>{{empleado.materno | lowercase}}</td>
-                    <td>{{empleado.primerDia | date:'fullDate'}} a las {{empleado.primerDia | date:'h:mma'}}</td>
-                    <td>{{empleado.telefono}}</td>
-                    <td>{{empleado.salario | currency}}</td>
-                    <td>% {{empleado.bono | number:2}}</td>
+                <tr ng-repeat="producto in productos | orderBy:ordenSeleccionado | filter:buscar">
+                    <td><img src="{{producto.image}}" class="img-responsive"></td>
+                    <td>{{producto.name | uppercase}}</td>
+                    <td>{{producto.price | currency}}</td>
+                    <td>{{producto.category}}</td>
+                    <td>{{producto.description}}</td>
+                    <td><button type="button" class="btn btn-info btn-xs" ng-click="editarProducto(producto)"><i class="glyphicon glyphicon-pencil"></i></button>
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="eliminarProducto(producto)"><i class="glyphicon glyphicon-remove"></i></button></td>
                 </tr>
             </tbody>
         </table>
