@@ -1,7 +1,7 @@
 miAp.service(
     "ProductosService",
     function($http, $q) {
-        // Return public API.
+
         return ({
             addProducto: addProducto,
             getProducto: getProducto,
@@ -11,6 +11,20 @@ miAp.service(
         });
 
         function addProducto(data) {
+            // var deferred = $q.defer();
+            // $http({
+            //     method: "post",
+            //     url: "api/product",
+            //     params: {
+            //         action: "add"
+            //     },
+            //     data: {
+            //         product: data
+            //     }
+            // }).success(function(){
+            //     deferred.resolve();
+            // });
+            // return deferred.promise;
             var request = $http({
                 method: "post",
                 url: "api/product",
