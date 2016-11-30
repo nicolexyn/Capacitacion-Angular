@@ -9,6 +9,10 @@ angular.module('directivaSimple', [])
             scope: {
                 textoVariable: '=texto'
             },
-            templateUrl: 'mi-encabezado.html'
+            templateUrl: 'mi-encabezado.html',
+            controller: function($scope){
+                console.log($scope.textoVariable);
+
+            }
         }
     })
