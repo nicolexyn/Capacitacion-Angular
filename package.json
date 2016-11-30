@@ -1,0 +1,17 @@
+{
+  "name": "node_app",
+  "version": "1.0.0",
+  "description": "node app",
+  "main": "node.js",
+  "scripts": {
+    "start": "nodemon node.js"
+  },
+  "author": "nicolexyn",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

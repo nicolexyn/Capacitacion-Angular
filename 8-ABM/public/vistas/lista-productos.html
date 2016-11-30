@@ -1,14 +1,11 @@
 <h2>Listado de Productos</h2>
 <hr>
 <button type="button" class="btn btn-primary" ng-click="agregarProducto()">Nuevo Producto</button>
-<div class="panel panel-primary" style="margin-top: 20px;">
-    <div class="panel-heading">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input type="text" class="form-control" placeholder="Buscar producto" ng-model="buscar.materno">
-        </div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-12 text-center" ng-show="!productos.length">
+        <div class="alert alert-info">No hay productos para mostrar, debes crear uno nuevo.</div>
     </div>
-    <div class="panel-body">
+    <div class="col-md-12" ng-show="productos.length">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -30,8 +27,10 @@
                     <td>{{producto.price | currency}}</td>
                     <td>{{producto.category}}</td>
                     <td>{{producto.description}}</td>
-                    <td><button type="button" class="btn btn-info btn-xs" ng-click="editarProducto(producto)"><i class="glyphicon glyphicon-pencil"></i></button>
-                    <button type="button" class="btn btn-danger btn-xs" ng-click="eliminarProducto(producto)"><i class="glyphicon glyphicon-remove"></i></button></td>
+                    <td>
+                        <button type="button" class="btn btn-info btn-xs" ng-click="editarProducto(producto)"><i class="glyphicon glyphicon-pencil"></i></button>
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="eliminarProducto(producto)"><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
